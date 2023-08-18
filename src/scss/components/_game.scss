@@ -40,13 +40,15 @@
     background: linear-gradient(180deg, #BC10D8 0%, rgba(80, 0, 250, 0.93) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    border: 1px solid;
+    border-image: linear-gradient(180deg, #BC10D8 0%, rgba(80, 0, 250, 0.93) 100%) 1;
   }
 
   &__item {
     display: flex;
     flex-direction: column;
-
-    border: 1px solid #BC10D8;
+    border: 1px solid;
+    border-image: linear-gradient(180deg, #BC10D8 0%, rgba(80, 0, 250, 0.93) 100%) 1;
     padding: 10px 20px 18px;
 
 
@@ -65,7 +67,49 @@
   &__item-link {
     margin-top: auto;
     background: linear-gradient(180deg, #BC10D8 0%, rgba(80, 0, 250, 0.93) 100%);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+}
+.buy {
+  position: relative;
+  margin-bottom: 110px;
+
+  text-align: center;
+  overflow-x: hidden;
+
+  .buy-btn {
+    margin: 10px auto;
+  }
+
+  &__img {
+    margin-bottom: 30px;
+
+  }
+  &__bg {
+    margin: 0;
+    position: absolute;
+    z-index: -1;
+    opacity: 0.1;
+    background: var(--gradient, linear-gradient(180deg, #BC10D8 0%, rgba(80, 0, 250, 0.93) 100%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    font-size: 400px;
+    line-height: 400px;
+    animation: line-text 6s linear 1s infinite;
+
+  }
+}
+@keyframes line-text {
+  from {
+    transform: translateX(115%);
+    transform-origin: left center;
+  }
+  to {
+    transform: translateX(-115%);
+    transform-origin: right center;
   }
 }
