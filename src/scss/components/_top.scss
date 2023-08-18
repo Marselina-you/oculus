@@ -1,0 +1,45 @@
+.top {
+  min-height: calc(100vh - 81px);
+  background-image: url(../img/top-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+
+
+  &__text {
+    margin-bottom: 50px;
+    font-size: 13px;
+  }
+}
+.title {
+  margin-bottom: 10px;
+  padding-top: 16%;
+  font-size: 96px;
+}
+.subtitle {
+  margin-bottom: 5px;
+  font-size: 36px;
+
+}
+.buy-btn {
+  display: flex;
+  padding: 1px;
+  background:  linear-gradient(180deg, #BC10D8 0%, rgba(80, 0, 250, 0.93) 100%);
+  text-transform: uppercase;
+
+
+
+  &__text {
+    color: #F6F4F5;
+    padding: 20px 110px;
+
+  }
+  &__price {
+    padding: 20px 105px;
+    background-color: #F6F4F5;
+  }
+}
+.buy-text {
+  padding-top: 6px;
+  font-size: 13px;
+}

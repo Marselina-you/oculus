@@ -6,11 +6,9 @@
 
 // подключения компонентов страницы
 @import "./components/header";
+@import "./components/top";
+
+@import "./components/footer";
 
 // тестовые стили, удалите их
-.page__body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: var(--vh);
-}
+
