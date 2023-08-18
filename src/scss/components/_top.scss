@@ -12,9 +12,11 @@
   }
 }
 .title {
+  margin: 0;
   margin-bottom: 10px;
   padding-top: 16%;
   font-size: 96px;
+  font-weight: 400;
 }
 .subtitle {
   margin-bottom: 5px;
@@ -32,6 +34,7 @@
   &__text {
     color: #F6F4F5;
     padding: 20px 110px;
+    text-transform: uppercase;
 
   }
   &__price {

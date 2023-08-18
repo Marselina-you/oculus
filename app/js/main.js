@@ -5,9 +5,13 @@
 /*!*******************************!*\
   !*** ./src/js/_components.js ***!
   \*******************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-console.log('components');
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_tabs_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/tabs.js */ "./src/js/components/tabs.js");
+/* harmony import */ var _components_tabs_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_components_tabs_js__WEBPACK_IMPORTED_MODULE_0__);
+
 
 /***/ }),
 
@@ -140,6 +144,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vendor_focus_visible_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vendor/focus-visible.js */ "./src/js/vendor/focus-visible.js");
 /* harmony import */ var _vendor_focus_visible_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_vendor_focus_visible_js__WEBPACK_IMPORTED_MODULE_0__);
 
+
+/***/ }),
+
+/***/ "./src/js/components/tabs.js":
+/*!***********************************!*\
+  !*** ./src/js/components/tabs.js ***!
+  \***********************************/
+/***/ (() => {
+
+const tabItem = document.querySelectorAll('.tabs__btn-item');
+const tabContent = document.querySelectorAll('.tabs__content-item');
+tabItem.forEach(function (element) {
+  element.addEventListener('click', open);
+});
+function open(evt) {
+  const tabTarget = evt.currentTarget;
+  const button = tabTarget.dataset.button;
+  tabItem.forEach(function (item) {
+    item.classList.remove('tabs__btn-item--active');
+  });
+  tabContent.forEach(function (item) {
+    item.classList.remove('tabs__content-item--active');
+  });
+  tabTarget.classList.add('tabs__btn-item--active');
+  document.querySelector(`#${button}`).classList.add('tabs__content-item--active');
+}
 
 /***/ }),
 
@@ -539,7 +569,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vars__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_vars */ "./src/js/_vars.js");
 /* harmony import */ var _functions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_functions */ "./src/js/_functions.js");
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_components */ "./src/js/_components.js");
-/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components__WEBPACK_IMPORTED_MODULE_3__);
 
 
 

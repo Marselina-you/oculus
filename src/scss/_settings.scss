@@ -7,9 +7,7 @@ html {
 *::after {
   box-sizing: inherit;
 }
-h1, h2 {
-  margin: 0 auto;
-}
+
 .page {
   height: 100%;
 
@@ -52,6 +50,9 @@ a {
   padding: 0;
   background-color: transparent;
   cursor: pointer;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
 }
 
 .list-reset {
@@ -112,4 +113,10 @@ a {
 
 .page--ios .dis-scroll {
   position: relative;
+}
+.section-title {
+  text-transform: uppercase;
+  color: #5C5C5E;
+  font-weight: 400;
+
 }

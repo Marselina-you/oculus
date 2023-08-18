@@ -53,10 +53,6 @@ html {
   box-sizing: inherit;
 }
 
-h1, h2 {
-  margin: 0 auto;
-}
-
 .page {
   height: 100%;
   -webkit-text-size-adjust: 100%;
@@ -98,6 +94,9 @@ a {
   padding: 0;
   background-color: transparent;
   cursor: pointer;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
 }
 
 .list-reset {
@@ -158,18 +157,22 @@ a {
   position: relative;
 }
 
+.section-title {
+  text-transform: uppercase;
+  color: #5C5C5E;
+  font-weight: 400;
+}
+
 .header {
   border-bottom: 1px solid #CACAD6;
   background: #F6F4F5;
 }
 
 .nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+  grid-template-columns: repeat(3, 1fr);
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -183,8 +186,15 @@ a {
   gap: 0 20px;
 }
 
+.logo {
+  -ms-grid-column-align: center;
+  justify-self: center;
+}
+
 .basket {
   position: relative;
+  -ms-grid-column-align: end;
+  justify-self: end;
 }
 .basket span {
   position: absolute;
@@ -220,9 +230,11 @@ a {
 }
 
 .title {
+  margin: 0;
   margin-bottom: 10px;
   padding-top: 16%;
   font-size: 96px;
+  font-weight: 400;
 }
 
 .subtitle {
@@ -242,6 +254,7 @@ a {
 .buy-btn__text {
   color: #F6F4F5;
   padding: 20px 110px;
+  text-transform: uppercase;
 }
 .buy-btn__price {
   padding: 20px 105px;
@@ -251,5 +264,195 @@ a {
 .buy-text {
   padding-top: 6px;
   font-size: 13px;
+}
+
+.features {
+  padding: 100px 0;
+}
+.features__titles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+.features__title {
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-preferred-size: 300px;
+  flex-basis: 300px;
+  padding-right: 20px;
+}
+.features__text {
+  margin: 0;
+  max-width: 390px;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+  font-size: 36px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#BC10D8), to(rgba(80, 0, 250, 0.93)));
+  background: linear-gradient(180deg, #BC10D8 0%, rgba(80, 0, 250, 0.93) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tabs {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 300px auto;
+  grid-template-columns: 300px auto;
+}
+.tabs__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+.tabs__btn-item {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.tabs__btn-item--active {
+  color: #070707;
+}
+.tabs__content {
+  position: relative;
+  min-height: 300px;
+}
+.tabs__content-img {
+  grid-row: 1/-1;
+  -ms-grid-row-align: stretch;
+  align-self: stretch;
+}
+.tabs__content-box h3 {
+  font-weight: 400;
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+.tabs__content-item {
+  position: absolute;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 280px;
+  grid-template-columns: auto 280px;
+  -ms-grid-rows: auto 150px;
+  grid-template-rows: auto 150px;
+  gap: 40px;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+.tabs__content-item--active {
+  opacity: 1;
+}
+
+.video {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  width: 280px;
+  height: 150px;
+  padding: 9px 10px;
+  background-image: url(../img/content-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+.video span {
+  color: #f6f4f5;
+  font-size: 13px;
+}
+.video__btn {
+  margin-left: 22px;
+}
+
+.game {
+  margin-bottom: 100px;
+}
+.game__title {
+  margin-bottom: 50px;
+}
+.game__inner {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+  grid-template-columns: repeat(4, 1fr);
+}
+.game__descr {
+  padding-right: 10px;
+}
+.game__descr-title {
+  text-transform: uppercase;
+  font-size: 36px;
+  margin-bottom: 10px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#BC10D8), to(rgba(80, 0, 250, 0.93)));
+  background: linear-gradient(180deg, #BC10D8 0%, rgba(80, 0, 250, 0.93) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.game__descr-text {
+  margin-bottom: 24px;
+}
+.game__link {
+  display: inline-block;
+  width: 225px;
+  text-align: center;
+  border: 1px solid #BC10D8;
+  padding: 16px 15px 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: -webkit-gradient(linear, left top, left bottom, from(#BC10D8), to(rgba(80, 0, 250, 0.93)));
+  background: linear-gradient(180deg, #BC10D8 0%, rgba(80, 0, 250, 0.93) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.game__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border: 1px solid #BC10D8;
+  padding: 10px 20px 18px;
+}
+.game__item-img {
+  margin-bottom: 10px;
+}
+.game__item-title {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+.game__item-text {
+  margin-bottom: 30px;
+}
+.game__item-link {
+  margin-top: auto;
+  background: -webkit-gradient(linear, left top, left bottom, from(#BC10D8), to(rgba(80, 0, 250, 0.93)));
+  background: linear-gradient(180deg, #BC10D8 0%, rgba(80, 0, 250, 0.93) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 /*# sourceMappingURL=main.css.map */
