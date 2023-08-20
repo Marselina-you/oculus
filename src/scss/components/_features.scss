@@ -6,6 +6,13 @@
     display: flex;
     align-items: flex-start;
 
+    @include small-tablet {
+
+    }
+    @include mobile {
+      display: block;
+    }
+
 
   }
 
@@ -27,20 +34,48 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
+    @include mobile {
+      font-size: 32px;
+    }
+
   }
 }
 .tabs {
   display: grid;
   grid-template-columns: 300px auto;
 
+
+
+  @include m-tablet {
+    display: block;
+  }
+
+
+
+
+
   &__btn {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    @include m-tablet {
+      display: block;
+      column-count: 2;
+    }
+
+    @include m-mobile {
+      column-count: 1;
+    }
   }
   &__btn-item {
     font-weight: 700;
     margin-bottom: 20px;
+
+    @include m-tablet {
+      display: block;
+
+    }
   }
   &__btn-item--active {
     color: #070707;
@@ -51,10 +86,18 @@
     position: relative;
     min-height: 300px;
 
+    @include m-tablet {
+      min-height: 500px;
+
+    }
+
+
+
   }
   &__content-img {
     grid-row: 1/-1;
     align-self: stretch;
+    object-fit: cover;
 
   }
   &__content-box {
@@ -75,9 +118,19 @@
     opacity: 0;
     transition: opacity .3s ease;
 
+    @include m-tablet {
+      display: block;
+      height: 0;
+      position: relative;
+    }
+
   }
   &__content-item--active {
     opacity: 1;
+
+    @include m-tablet {
+      height: auto;
+    }
   }
 }
 .video {
@@ -94,12 +147,25 @@
   justify-content: flex-end;
   align-items: flex-start;
 
+
+
+  @include mobile {
+    width: auto;
+    height: 250px;
+    margin-top: 20px;
+  }
+
   span {
     color: #f6f4f5;
     font-size: 13px;
   }
 
   &__btn {
+
     margin-left: 22px;
+
+    span {
+      display: block;
+    }
   }
 }

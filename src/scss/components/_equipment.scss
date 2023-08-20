@@ -10,9 +10,25 @@
     grid-template-columns: 2fr 1fr 1fr;
     grid-template-rows: repeat(2, 1fr);
     gap: 10px 20px;
+
+    @include mobile {
+      display: block;
+    }
   }
   &__box-img {
     margin-bottom: 10px;
+
+    @include mobile {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__box-text {
+
+    @include mobile {
+      margin-bottom: 10px;
+    }
   }
   &__box-title {
     background: linear-gradient(180deg, #BC10D8 0%, rgba(80, 0, 250, 0.93) 100%);
@@ -21,6 +37,7 @@
     font-size: 36px;
     text-transform: uppercase;
   }
+
   &__box-item--one {
     grid-row: 1/-1;
   }
@@ -51,7 +68,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    //padding: 16px;
     font-weight: 700;
     color: #fff;
     background: linear-gradient(180deg, #BC10D8 0%, rgba(80, 0, 250, 0.93) 100%);

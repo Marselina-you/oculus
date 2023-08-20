@@ -5,6 +5,11 @@
   background-size: cover;
   background-position: bottom center;
 
+  @include mobile {
+    text-align: center;
+
+  }
+
 
   &__text {
     margin-bottom: 50px;
@@ -17,10 +22,29 @@
   padding-top: 16%;
   font-size: 96px;
   font-weight: 400;
+
+  @include small-tablet {
+    font-size: 60px;
+
+  }
+
+  @include m-mobile {
+    font-size: 48px;
+
+  }
 }
 .subtitle {
   margin-bottom: 5px;
   font-size: 36px;
+
+  @include small-tablet {
+    font-size: 24px;
+
+  }
+  @include m-mobile {
+    font-size: 20px;
+
+  }
 
 }
 .buy-btn {
@@ -28,6 +52,12 @@
   padding: 1px;
   background:  linear-gradient(180deg, #BC10D8 0%, rgba(80, 0, 250, 0.93) 100%);
   text-transform: uppercase;
+
+  @include mobile {
+    margin: 0 auto;
+    flex-direction: column;
+
+  }
 
 
 
@@ -46,3 +76,5 @@
   padding-top: 6px;
   font-size: 13px;
 }
+
+

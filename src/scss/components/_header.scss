@@ -7,13 +7,78 @@
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
   height: 80px;
+
+  @include mobile {
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+
 }
+.menu-btn {
+  display: none;
+  width: 40px;
+  height: 30px;
+  //display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  span {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+  }
+
+  @include l-tablet {
+    display: flex;
+  }
+}
+
 .menu {
   display: flex;
   gap: 0 20px;
+
+
+  @include l-tablet {
+    position: absolute;
+    //display: flex;
+    top: 80px;
+    left: 0;
+    right: 0;
+    width: 320px;
+    background-color: black;
+    padding: 100px 0;
+    color: #fff;
+    transform: translateX(-100%);
+    transition: transform .5s;
+    flex-direction: column;
+    align-items: center;
+
+    &__link {
+      font-size: 24px;
+      display: inline-block;
+      padding: 10px 0;
+    }
+
+  }
+  @include mobile {
+    width: 100%;
+  }
+
+
+
+}
+.menu.menu--active {
+
+  transform: translateX(0%);
+
+
+
+
+
+
 }
 .logo {
   justify-self: center;
+  display: flex;
 }
 .basket {
   position: relative;

@@ -12,6 +12,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @include l-tablet {
+    display: block;
+  }
 }
 &__form {
   flex-basis: 600px;
@@ -27,6 +31,10 @@
 .form {
   position: relative;
   margin-bottom: 10px;
+
+  @include l-tablet {
+    margin-bottom: 20px;
+  }
 
 &__input {
   width: 100%;
